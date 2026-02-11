@@ -17,6 +17,21 @@ class MainActivity : AppCompatActivity() {
         // printing their output to the Log, which is visible in the LogCat:
         // eg. Log.d("function output", getTestDataArray().toString())
 
+        val testData = getTestDataArray()
+        Log.d("TEST_ARRAY", testData.toString())
+
+        val testDoubleList = listOf(10.0, 5.0, 3.0, 8.0, 12.0)
+        val result = averageLessThanMedian(testDoubleList)
+        Log.d("AVG_LT_MEDIAN", result.toString())
+
+        val testView = getView(
+            position = 0,
+            recycledView = null,
+            collection = testData,
+            context = this
+        )
+
+        Log.d("GET_VIEW", (testView as TextView).text.toString())
     }
 
 
